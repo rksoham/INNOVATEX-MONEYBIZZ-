@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f3f2ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-register-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-header h1 {
+    font-size: 32px;
+    color: #333333;
+    text-align: center;
+}
+
+.login-header .subtext {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #0a66c2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #004182;
+}
+
+.primary-btn {
+    background-color: #0a66c2;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #004182;
+}
+
+.forgot-password,
+.signup-link,
+.signin-link {
+    color: #0a66c2;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password:hover,
+.signup-link:hover,
+.signin-link:hover {
+    text-decoration: underline;
+}
+
+.go-to-events {
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    background-color: #0a66c2;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.go-to-events:hover {
+    background-color: #004182;
+}
+
+.hidden {
+    display: none;
+}

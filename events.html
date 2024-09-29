@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Event & Ask for Sponsorship</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <div class="login-register-wrapper">
+        <div class="form-container" id="post-event-container">
+            <div class="login-header">
+                <h1>Post an Event</h1>
+                <p class="subtext">Share your event details and seek sponsorship.</p>
+            </div>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-title">Event Title</label>
+                    <input type="text" id="event-title" name="event-title" placeholder="Enter event title" required>
+                </div>
+                <div class="form-group">
+                    <label for="event-description">Event Description</label>
+                    <textarea id="event-description" name="event-description" placeholder="Describe your event" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="event-date">Event Date</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="sponsors-needed">Sponsors Needed</label>
+                    <input type="text" id="sponsors-needed" name="sponsors-needed" placeholder="What kind of sponsorship are you looking for?" required>
+                </div>
+                <button type="submit" class="btn primary-btn">Post Event</button>
+            </form>
+        </div>
+    </div>
+    <script src="events.js"></script>
+</body>
+</html>
