@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="events.css">
 </head>
 <body>
+    <script>
+      if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'index.html';
+      }
+    </script>
+    
     <div class="login-register-wrapper">
         <div class="form-container" id="post-event-container">
             <div class="login-header">

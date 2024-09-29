@@ -37,3 +37,34 @@ function moveSlider() {
 bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
+
+function handleSignUp() {
+  alert("Sign-up successful! Please sign in.");
+
+  // Toggle to the sign-in form
+  main.classList.remove("sign-up-mode");
+}
+
+function handleLogin() {
+  const loginUsername = document.getElementById("sign-in-username").value;
+  const loginPassword = document.getElementById("sign-in-password").value;
+
+  // Check fixed username and password
+  if (loginUsername === "user" && loginPassword === "password") {
+    alert("Login successful!");
+
+    // Redirect to events.html
+    window.location.href = "events.html";
+  } else {
+    alert("Invalid username or password. Please use 'user' as username and 'password' as password.");
+  }
+}
+
+// Check login status on page load of events.html
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.location.pathname.includes("events.html")) {
+    const loginPage = "index.html";
+    alert("Please log in to access this page.");
+    window.location.href = loginPage;
+  }
+});
