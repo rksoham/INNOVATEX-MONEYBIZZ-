@@ -1,45 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post Event & Ask for Sponsorship</title>
-    <link rel="stylesheet" href="events.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moneybizz</title>
+  <link rel="stylesheet" href="events.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #212529;
+      padding: 15px 30px;
+      position: relative;
+      z-index: 1000;
+    }
+
+    .navbar .logo h1 {
+      color: #ffffff;
+      font-size: 2rem;
+    }
+
+    .navbar .search-bar input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .navbar .nav-icons a {
+      margin-left: 20px;
+      color: white;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+
+    .navbar .nav-icons img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+    }
+
+    .navbar .nav-icons img:hover {
+      transform: scale(1.2);
+    }
+
+    /* Moving Background Images */
+    .moving-background {
+      background: url('background1.jpg') repeat-x, url('background2.jpg') repeat-x;
+      animation: move-bg 50s linear infinite;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 300%;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    @keyframes move-bg {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Hero Banner */
+    .hero-banner {
+      position: relative;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-banner .banner-text {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 30px 50px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-banner h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero-banner .btn-primary {
+      padding: 12px 30px;
+      font-size: 1.2rem;
+      background-color: #ffc107;
+      border: none;
+      color: #212529;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .hero-banner .btn-primary:hover {
+      background-color: #e0a800;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Featured Services Section */
+    .featured-services {
+      display: flex;
+      justify-content: space-around;
+      padding: 50px;
+      background-color: #f8f9fa;
+      position: relative;
+    }
+
+    .service-box {
+      text-align: center;
+      max-width: 250px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-box:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-box img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .service-box h3 {
+      margin: 15px 0;
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .service-box p {
+      color: #666;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #212529;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+  </style>
 </head>
+
 <body>
-    <script>
-      if (!localStorage.getItem('isLoggedIn')) {
-        window.location.href = 'index.html';
-      }
-    </script>
-    
-    <div class="login-register-wrapper">
-        <div class="form-container" id="post-event-container">
-            <div class="login-header">
-                <h1>Post an Event</h1>
-                <p class="subtext">Share your event details and seek sponsorship.</p>
-            </div>
-            <form id="event-form">
-                <div class="form-group">
-                    <label for="event-title">Event Title</label>
-                    <input type="text" id="event-title" name="event-title" placeholder="Enter event title" required>
-                </div>
-                <div class="form-group">
-                    <label for="event-description">Event Description</label>
-                    <textarea id="event-description" name="event-description" placeholder="Describe your event" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="event-date">Event Date</label>
-                    <input type="date" id="event-date" name="event-date" required>
-                </div>
-                <div class="form-group">
-                    <label for="sponsors-needed">Sponsors Needed</label>
-                    <input type="text" id="sponsors-needed" name="sponsors-needed" placeholder="What kind of sponsorship are you looking for?" required>
-                </div>
-                <button type="submit" class="btn primary-btn">Post Event</button>
-            </form>
-        </div>
+  <!-- Moving Background -->
+  <div class="moving-background">
+    <img src="sponsor.jpg" alt="High-Quality Events">
+  </div>
+
+  <!-- Header with Navigation Bar -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <h1>Moneybizz</h1>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+      </div>
+      <div class="nav-icons">
+        <a href="#network" title="Network"><img src="network-icon.png" alt="Network Icon"></a>
+        <a href="#messages" title="Messages"><img src="message-icon.png" alt="Message Icon"></a>
+        <a href="#notifications" title="Notifications"><img src="notification-icon.png" alt="Notifications Icon"></a>
+        <a href="#profile" title="Profile"><img src="profile-icon.png" alt="Profile Icon"></a>
+        <a href="#cart" title="Cart"><img src="cart-icon.png" alt="Cart Icon"></a>
+      </div>
     </div>
-    <script src="events.js"></script>
+  </header>
+
+  <!-- Hero Banner Section -->
+  <section class="hero-banner">
+    <div class="banner-text">
+      <h2>Find Sponsors and Manage Events Effortlessly</h2>
+      <p>Connect, collaborate, and grow your events with our platform.</p>
+      <button class="btn-primary">Start Now</button>
+    </div>
+  </section>
+
+  <!-- Featured Services Section -->
+  <section class="featured-services">
+    <div class="service-box">
+      <img src="im.jpg" alt="High-Quality Events">
+      <h3>High-Quality Events</h3>
+      <p>Discover events and sponsorship opportunities in your area.</p>
+    </div>
+    <div class="service-box">
+      <img src="message.jpg" alt="Fast and Easy Messaging">
+      <h3>Fast and Easy Messaging</h3>
+      <p>Message investors and sponsors directly within the app.</p>
+    </div>
+    <div class="service-box">
+      <img src="network.jpg" alt="Hassle-Free Networking">
+      <h3>Hassle-Free Networking</h3>
+      <p>Build connections with other professionals and sponsors.</p>
+    </div>
+    <div class="service-box">
+      <img src="support.jpg" alt="24/7 Support">
+      <h3>24/7 Support</h3>
+      <p>Our customer support is available 24/7 to assist you with any issues.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Moneybizz. All rights reserved.</p>
+  </footer>
+
+  <script src="events.js"></script>
 </body>
 </html>
