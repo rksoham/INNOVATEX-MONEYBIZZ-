@@ -50,7 +50,7 @@ function handleLogin() {
   const loginPassword = document.getElementById("sign-in-password").value;
 
   // Check fixed username and password
-  if (loginUsername === "user" && loginPassword === "password") {
+  if (loginUsername === "Kaushal" && loginPassword === "1234") {
     alert("Login successful!");
 
     // Redirect to events.html
