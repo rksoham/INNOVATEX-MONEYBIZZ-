@@ -56,7 +56,7 @@ function handleLogin() {
     // Redirect to events.html
     window.location.href = "events.html";
   } else {
-    alert("Invalid username or password. Please use 'user' as username and 'password' as password.");
+    alert("Invalid username or password. Please try again!!.");
   }
 }
 
